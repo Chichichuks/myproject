@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="drag.js" defer></script>
+    <script src="todo.js" defer></script>
+</head>
+<body>
+    <div class="board">
+        <button id="add-lane-btn">Add Column +</button>
+        <div class="lanes" id="lanes">
+            <!-- Columns will be added dynamically -->
+        </div>
+    </div>
+
+    <!-- Task Modal -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-task-modal">&times;</span>
+            <form id="task-form">
+                <input type="hidden" id="task-id" />
+                <label for="task-title">Title</label>
+                <input type="text" id="task-title" required />
+
+                <label for="task-desc">Description</label>
+                <textarea id="task-desc" rows="4"></textarea>
+
+                <label for="task-lane">Lane</label>
+                <select id="task-lane">
+                    <!-- Options will be added dynamically -->
+                </select>
+
+                <button type="submit">Save</button>
+                <button type="button" id="delete-task-btn">Delete</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lane Modal -->
+    <div id="lane-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-lane-modal">&times;</span>
+            <form id="lane-form">
+                <input type="hidden" id="lane-id" />
+                <label for="lane-title">Column Title</label>
+                <input type="text" id="lane-title" required />
+
+                <button type="submit">Save</button>
+                <button type="button" id="delete-lane-btn">Delete</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="header">
+            <h1>Проекты</h1>
+            <button class="new-project-button" onclick="newProject()">Создать проект</button>
+        </div>
+        <ul class="project-list" id="project-list">
+            <!-- Динамически добавляемые элементы проектов -->
+        </ul>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Содержимое всплывающего окна</p>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Box -->
+        <div id="loginBox" class="auth-box">
+            <h1 class="title">Авторизация</h1>
+            <p class="subtitle">Войдите в аккаунт или создайте новый</p>
+            <div id="loginSnackbar" class="snackbar">Ошибка</div>
+            <input type="text" id="loginUsername" class="input" placeholder="Введите почту или имя пользователя">
+            <input type="password" id="loginPassword" class="input" placeholder="Введите пароль">
+            <div class="button-container">
+                <button id="loginButton" class="button">ВОЙТИ</button>
+                <button id="showRegisterButton" class="button">РЕГИСТРАЦИЯ</button>
+                <button id="showForgotPasswordButton" class="button button-link">Забыли пароль?</button>
+            </div>
+        </div>
+
+        <!-- Register Box -->
+        <div id="registerBox" class="auth-box" style="display: none;">
+            <h1 class="title">Регистрация</h1>
+            <div id="registerSnackbar" class="snackbar">Ошибка</div>
+            <input type="text" id="registerUsername" class="input" placeholder="Введите имя пользователя">
+            <input type="email" id="registerEmail" class="input" placeholder="Введите адрес электронной почты">
+            <input type="password" id="registerPassword1" class="input" placeholder="Придумайте пароль">
+            <input type="password" id="registerPassword2" class="input" placeholder="Подтвердите пароль">
+            <div class="button-container">
+                <button id="registerButton" class="button">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+                <button id="backToLoginButton" class="button">Вернуться на страницу входа</button>
+            </div>
+        </div>
+
+        <!-- Forgot Password Box -->
+        <div id="forgotPasswordBox" class="auth-box" style="display: none;">
+            <h1 class="title">Не удается войти?</h1>
+            <p class="subtitle">
+                Введите адрес электронной почты,<br>
+                который вы указывали при регистрации,<br>
+                и мы отправим вам код для восстановления.
+            </p>
+            <div id="forgotPasswordSnackbar" class="snackbar">Ошибка</div>
+            <input type="text" id="forgotPasswordEmail" class="input" placeholder="Введите адрес электронной почты">
+            <div class="button-container">
+                <button id="getCodeButton" class="button">Получить код</button>
+                <button id="backToLoginFromForgotButton" class="button button-link">Вернуться на страницу входа</button>
+            </div>
+        </div>
+
+        <!-- Enter Code Box -->
+        <div id="enterCodeBox" class="auth-box" style="display: none;">
+            <h1 class="title">Введите код из письма</h1>
+            <p class="subtitle">
+                На указанный вами адрес<br>
+                был отправлен 6-значный код
+            </p>
+            <div id="enterCodeSnackbar" class="snackbar">Ошибка</div>
+            <input type="text" id="codeInput" class="input" placeholder="Введите код">
+            <div class="button-container">
+                <button id="submitCodeButton" class="button">Подтвердить</button>
+                <button id="backToLoginFromEnterCodeButton" class="button button-link">Вернуться на страницу входа</button>
+            </div>
+        </div>
+
+        <!-- Reset Password Box -->
+        <div id="resetPasswordBox" class="auth-box" style="display: none;">
+            <h1 class="title">Восстановление пароля</h1>
+            <div id="resetPasswordSnackbar" class="snackbar">Ошибка</div>
+            <input type="password" id="newPassword" class="input" placeholder="Введите новый пароль">
+            <input type="password" id="confirmPassword" class="input" placeholder="Подтвердите новый пароль">
+            <div class="button-container">
+                <button id="changePasswordButton" class="button">СМЕНИТЕ ПАРОЛЬ</button>
+                <button id="backToLoginFromResetButton" class="button button-link">Вернуться на страницу входа</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/scripts.js"></script>
+</body>
+</html>
